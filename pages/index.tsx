@@ -1,14 +1,28 @@
-import type { NextPage } from 'next';
-import '../styles/index.scss';
-
-import useMap from '../hook/useMap';
+import type {NextPage} from 'next';
+import {direction5, geocoding, reverseGeocoding} from "./api/mapApi";
+import NaverMap from "../mapModule/NaverMap";
 
 const IndexPage: NextPage = () => {
-    useMap();
 
-    return <div id="map"></div>;
+    return (
+        <>
+            <NaverMap />
+            <button onClick={(event)=> {
+                event.preventDefault();
+                geocoding();
+            }}>geocoding</button>
+
+            <button onClick={(event)=> {
+                event.preventDefault();
+                reverseGeocoding();
+            }}>reverseGeocoding</button>
+
+            <button onClick={(event)=> {
+                event.preventDefault();
+                direction5();
+            }}>direction5</button>
+        </>
+    );
 };
-
-
 
 export default IndexPage;

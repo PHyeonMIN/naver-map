@@ -10,15 +10,18 @@
   },
   "dependencies": {
     "@types/navermaps": "^3.0.17",
+    "axios": "^0.27.2",
     "next": "12.3.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "sass": "^1.54.8",
     "styled-components": "^5.3.5"
   },
   "devDependencies": {
     "@types/node": "18.7.18",
     "@types/react": "18.0.20",
     "@types/react-dom": "18.0.6",
+    "@types/styled-components": "^5.1.26",
     "eslint": "8.23.1",
     "eslint-config-next": "12.3.1",
     "typescript": "4.8.3"
