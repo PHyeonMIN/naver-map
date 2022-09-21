@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-import {direction5} from "../pages/api/mapApi";
+import {direction5} from "./api/mapApi";
 
 function useMap() {
     /**

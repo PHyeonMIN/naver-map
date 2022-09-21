@@ -1,6 +1,6 @@
 import type {NextPage} from 'next';
 import {direction5, geocoding, reverseGeocoding} from "./api/mapApi";
-import NaverMap from "../mapModule/NaverMap";
+import NaverMap from "./NaverMap";
 
 const IndexPage: NextPage = () => {
 

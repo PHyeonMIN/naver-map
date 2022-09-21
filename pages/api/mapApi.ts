@@ -34,7 +34,7 @@ export const reverseGeocoding = async () => {
         .get('/example/map-reversegeocode/v2/gc', {
             params: {
                 request: "coordsToaddr",
-                coords: "129.1133567,35.2982640",   // 입력좌표
+                coords: "126.8473066,35.1466323",   // 입력좌표
                 sourcecrs: "epsg:4326",             // 입력좌표계코드(위경도좌표계)
                 output: "json",
                 orders: "legalcode,admcode"         // 변환작업 (좌표 to 법접동, 좌표 to 행정동)
@@ -55,8 +55,8 @@ export const direction5 = async () => {
     const localInfo = await axios
         .get('/example/map-direction/v1/driving', {
             params: {
-                start: "127.1058342,37.359708",
-                goal: "129.075986,35.179470",
+                start: "126.8473066,35.1466323",
+                goal: "126.8798817,35.1612826",
                 option: "trafast"               // 탐색옵션
             },
             headers: {
@@ -91,3 +91,8 @@ export const direction15 = async () => {
             return res.data;
         });
 }
+
+// 김대중컨벤션센터 : 126.8409538,35.1468849
+// 여보야 : 126.8473066,35.1466323
+// 유스퀘어 : 126.8798817,35.1612826
+// 문화의 전당 : 126.9202542,35.1467193
