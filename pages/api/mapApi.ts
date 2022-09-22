@@ -1,14 +1,19 @@
 import axios from "axios";
 
+
 export async function geocoding(query="분당구 불정로 6") {
+    console.log(process.env.NEXT_PUBLIC_MAP_KEY);
+    console.log(process.env.NEXT_PUBLIC_NAVER_CLIENT_ID);
+    console.log(process.env.NEXT_PUBLIC_NAVER_CLIENT_SECRET);
     const location = await axios
         .get('/example/map-geocode/v2/geocode', {
             params: {
                 query,
             },
             headers: {
-                "X-NCP-APIGW-API-KEY-ID": "4y0ffvdrlx",
-                "X-NCP-APIGW-API-KEY": "SEJ3gKDl2vWoa98E8minfnjyhTXe3g9jlKWFdy2X",
+                "X-NCP-APIGW-API-KEY-ID": `${process.env.NEXT_PUBLIC_NAVER_CLIENT_ID}`,
+                "X-NCP-APIGW-API-KEY": `${process.env.NEXT_PUBLIC_NAVER_CLIENT_SECRET}`,
+
             },
         })
         .then(res => {
@@ -40,8 +45,8 @@ export const reverseGeocoding = async () => {
                 orders: "legalcode,admcode"         // 변환작업 (좌표 to 법접동, 좌표 to 행정동)
             },
             headers: {
-                "X-NCP-APIGW-API-KEY-ID": "4y0ffvdrlx",
-                "X-NCP-APIGW-API-KEY": "SEJ3gKDl2vWoa98E8minfnjyhTXe3g9jlKWFdy2X",
+                "X-NCP-APIGW-API-KEY-ID": `${process.env.NEXT_PUBLIC_NAVER_CLIENT_ID}`,
+                "X-NCP-APIGW-API-KEY": `${process.env.NEXT_PUBLIC_NAVER_CLIENT_SECRET}`,
             },
         })
         .then(res => {
@@ -49,6 +54,7 @@ export const reverseGeocoding = async () => {
             console.log(res);
             return res.data;
         });
+    return localInfo;
 }
 
 export const direction5 = async () => {
@@ -60,8 +66,8 @@ export const direction5 = async () => {
                 option: "trafast"               // 탐색옵션
             },
             headers: {
-                "X-NCP-APIGW-API-KEY-ID": "4y0ffvdrlx",
-                "X-NCP-APIGW-API-KEY": "SEJ3gKDl2vWoa98E8minfnjyhTXe3g9jlKWFdy2X",
+                "X-NCP-APIGW-API-KEY-ID": `${process.env.NEXT_PUBLIC_NAVER_CLIENT_ID}`,
+                "X-NCP-APIGW-API-KEY": `${process.env.NEXT_PUBLIC_NAVER_CLIENT_SECRET}`,
             },
         })
         .then(res => {
@@ -81,8 +87,8 @@ export const direction15 = async () => {
                 option: "탐색옵션"
             },
             headers: {
-                "X-NCP-APIGW-API-KEY-ID": "4y0ffvdrlx",
-                "X-NCP-APIGW-API-KEY": "SEJ3gKDl2vWoa98E8minfnjyhTXe3g9jlKWFdy2X",
+                "X-NCP-APIGW-API-KEY-ID": `${process.env.NEXT_PUBLIC_NAVER_CLIENT_ID}`,
+                "X-NCP-APIGW-API-KEY": `${process.env.NEXT_PUBLIC_NAVER_CLIENT_SECRET}`,
             },
         })
         .then(res => {
