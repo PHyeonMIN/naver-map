@@ -4,18 +4,10 @@ import NaverMap from "./NaverMap";
 
 const IndexPage: NextPage = () => {
 
+
     return (
         <>
             <NaverMap />
-            <button onClick={(event)=> {
-                event.preventDefault();
-                geocoding();
-            }}>geocoding</button>
-
-            <button onClick={(event)=> {
-                event.preventDefault();
-                reverseGeocoding();
-            }}>reverseGeocoding</button>
 
             <button onClick={(event)=> {
                 event.preventDefault();
